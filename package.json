@@ -17,6 +17,6 @@
     "e2e:run": "yarn workspace api-testing-with-cypress-e2e e2e:run"
   },
   "engines": {
-    "node": "^14.15"
+    "node": "^16.18"
   }
 }

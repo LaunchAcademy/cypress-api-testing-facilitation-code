@@ -33,7 +33,7 @@ context("api/v1/brandsRouter", () => {
         .should("have.length", 2)
     })
 
-    it("has the right property name property & value", () => {
+    it("has the right property name & value", () => {
       cy.request("/api/v1/brands")
         .its("body")
         .its("brands")
