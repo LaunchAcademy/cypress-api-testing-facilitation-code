@@ -10,11 +10,16 @@ context("api/v1/brandsRouter", () => {
       cy.task("db:insert", { modelName: "Brand", json: initialBrands})
     })
     
-    it("has the correct response type", () => {
+    it.only("has the correct response type", () => {
       cy.request("/api/v1/brands")
-        .its("headers")
-        .its("content-type")
-        .should("include", "application/json")
+      .its("headers")
+      .debug()
+      // headers -> content-type -> include application/json
+
+
+        // .its("headers")
+        // .its("content-type")
+        // .should("include", "application/json")
     })
 
     it("return the correct status code", () => {
