@@ -1,4 +1,6 @@
 {
   "baseUrl": "http://localhost:8765",
-  "nodeVersion": "system"
+  "nodeVersion": "system",
+  "video": false,
+  "screenshotOnRunFailure": false
 }

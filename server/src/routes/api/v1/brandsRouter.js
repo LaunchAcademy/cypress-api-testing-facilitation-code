@@ -25,7 +25,7 @@ brandsRouter.get("/:id", async (req, res) => {
     const brand = await Brand.query().findById(id)
     return res.status(200).json({ brand: brand })
   } catch(error){
-    return res.status(500).json({ errors: error })
+    return res.status(404).json({ errors: error })
   }
 })
 
@@ -37,7 +37,8 @@ brandsRouter.post("/", async (req, res) => {
     const newBrand = await Brand.query().insertAndFetch(formInput)
     return res.status(201).json({ brand: newBrand })
   } catch (error) {
-    console.log(error)
+    console.log(error.data)
+    console.log(error.data.name[0].params)
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
     }
